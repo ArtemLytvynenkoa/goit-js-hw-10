@@ -1,8 +1,7 @@
 import Notiflix from 'notiflix';
 
-const fetchProperties = 'name,capital,population,flags,languages';
 const mainUrl = 'https://restcountries.com/v3.1';
-
+const fetchProperties = 'name,capital,population,flags,languages';
 
 export default class SearchCountryService {
     constructor() {

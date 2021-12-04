@@ -1,20 +1,22 @@
-<div class="country-card">
-    <div class="country-name">
-        <img src="{{flags.svg}}" alt="{{name.official}}" width="40">
-        <strong> {{name.official}}</strong>
+{{#each this}}
+    <div class="country-card">
+        <div class="country-name">
+            <img src="{{flags.svg}}" alt="Flag {{name.official}}" width="60">
+            <strong> {{name.official}}</strong>
+        </div>
+        <div>
+            <strong>Capital: </strong>
+            {{capital}}
+        </div>
+        <div>
+            <strong>Population: </strong>
+            {{population}}
+        </div>
+        <div>
+            <strong>Languages: </strong>
+            {{#each languages}}
+                <span>{{this}},</span>
+            {{/each}}
+        </div>
     </div>
-    <div>
-        <strong>Capital: </strong>
-        {{capital}}
-    </div>
-    <div>
-        <strong>Population: </strong>
-        {{population}}
-    </div>
-    <div>
-        <strong>Languages: </strong>
-        {{#each languages}}
-            <span>{{this}},</span>
-        {{/each}}
-    </div>
-</div>
+{{/each}}
