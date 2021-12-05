@@ -10,7 +10,7 @@ export default class SearchCountryService {
 
     fetchCountries() {
         const url = `${mainUrl}/name/${this.searchQuery}?fields=${fetchProperties}`
-
+            
         return fetch(url)
             .then(response => response.json())
             .then(countriesArray => {
@@ -22,9 +22,6 @@ export default class SearchCountryService {
                 }
                 return countriesArray
             })
-            .catch(error => {
-                return Notiflix.Notify.failure('Oops, there is no country with that name');
-        })
     };
 
     get query() {

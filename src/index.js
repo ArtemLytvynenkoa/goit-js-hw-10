@@ -19,9 +19,18 @@ function onInputChange(element) {
 
     if (searchCountryService.query === '') {
         return Notiflix.Notify.failure('Oops, there is no country with that name');
-    };
-
-    searchCountryService.fetchCountries().then(renderCountry)
+    }
+    
+    searchCountryService.fetchCountries()
+        .then(countries => {
+            if (!countries) {
+                return
+            }
+            renderCountry(countries)
+        })
+        .catch(error => {
+            console.log(error)
+        })
 }
 
 function renderCountry(countries) {
